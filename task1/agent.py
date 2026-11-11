@@ -89,6 +89,8 @@ class SinglePathPlanningAgent(BaseAgent):
         """
         # Check if agent has an assigned task
         robot = self.env.robots[0]  # Assuming single agent for this class
+        current_errand = None
+        task_id = -1
         
         if robot.task_id is None or robot.task_id < 0:
             # No current task, assign the first pending task
