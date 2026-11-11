@@ -5,7 +5,7 @@ from collections import deque
 from environment import MultiAgentPathfindingEnv, Robot, Task, Errand, Action, Direction
 import random
 from dataclasses import dataclass, field
-from hiddenagent import SinglePathPlanningAgent
+from task1.agent import SinglePathPlanningAgent
 
 def manhattan_heuristic(state: Dict[str, Any], goal: Tuple[int, int]) -> float:
     """
