@@ -2,7 +2,7 @@ import numpy as np
 from itertools import permutations
 from typing import List, Tuple, Dict, Any
 from environment import MultiAgentPathfindingEnv, Action, Direction
-from hiddenagent import HiddenAgent
+from support.multitarget import MultiTargetAgent
 
 def manhattan_heuristic(state: Dict[str, Any], goal: Tuple[int, int]) -> float:
     """
@@ -18,7 +18,7 @@ def manhattan_heuristic(state: Dict[str, Any], goal: Tuple[int, int]) -> float:
     robot_position = state['robots'][0][1:3]  # Assuming single agent for this class
     return abs(robot_position[0] - goal[0]) + abs(robot_position[1] - goal[1])
 
-class SinglePathPlanningAgent(HiddenAgent):
+class SinglePathPlanningAgent(MultiTargetAgent):
 
     def choose_action(self, obs: np.ndarray) -> Any:
         """
@@ -33,7 +33,7 @@ class SinglePathPlanningAgent(HiddenAgent):
             for task_id in task_ids
         ]
 
-        if not hasattr(self, 'current_actions'):
+        if not self.current_actions and tasks:
             self.current_actions = self.a_star((robot.x, robot.y), tasks)
         
         for task_id, task_pos in zip(task_ids, tasks):
