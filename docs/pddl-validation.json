@@ -1,0 +1,158 @@
+{
+  "problem1.pddl": {
+    "status": "VALID",
+    "actions": 4,
+    "plan": [
+      "moveforward(square1, square2, east)",
+      "moveforward(square2, square3, east)",
+      "moveforward(square3, square4, east)",
+      "moveforward(square4, square5, east)"
+    ]
+  },
+  "problem2.pddl": {
+    "status": "VALID",
+    "actions": 48,
+    "plan": [
+      "moveforward(robot2, square3, square2, west, c1, c2)",
+      "wait(robot1, square1, c0, c1)",
+      "begin-execution(c0)",
+      "apply-moveforward(robot2, square3, square2, c0, c1)",
+      "apply-wait(robot1, square1, c1, c2)",
+      "end-round(c2)",
+      "rotate(robot2, square2, west, south, c1, c2)",
+      "wait(robot1, square1, c0, c1)",
+      "begin-execution(c0)",
+      "apply-wait(robot1, square1, c0, c1)",
+      "apply-rotate(robot2, square2, west, south, c1, c2)",
+      "end-round(c2)",
+      "moveforward(robot1, square1, square2, east, c1, c2)",
+      "moveforward(robot2, square2, square4, south, c0, c1)",
+      "begin-execution(c0)",
+      "apply-moveforward(robot1, square1, square2, c0, c1)",
+      "apply-moveforward(robot2, square2, square4, c1, c2)",
+      "end-round(c2)",
+      "moveforward(robot1, square2, square3, east, c1, c2)",
+      "rotate(robot2, square4, south, west, c0, c1)",
+      "begin-execution(c0)",
+      "apply-moveforward(robot1, square2, square3, c0, c1)",
+      "apply-rotate(robot2, square4, south, west, c1, c2)",
+      "end-round(c2)",
+      "rotate(robot2, square4, west, north, c1, c2)",
+      "wait(robot1, square3, c0, c1)",
+      "begin-execution(c0)",
+      "apply-wait(robot1, square3, c0, c1)",
+      "apply-rotate(robot2, square4, west, north, c1, c2)",
+      "end-round(c2)",
+      "moveforward(robot2, square4, square2, north, c1, c2)",
+      "wait(robot1, square3, c0, c1)",
+      "begin-execution(c0)",
+      "apply-moveforward(robot2, square4, square2, c0, c1)",
+      "apply-wait(robot1, square3, c1, c2)",
+      "end-round(c2)",
+      "rotate(robot2, square2, north, west, c1, c2)",
+      "wait(robot1, square3, c0, c1)",
+      "begin-execution(c0)",
+      "apply-rotate(robot2, square2, north, west, c0, c1)",
+      "apply-wait(robot1, square3, c1, c2)",
+      "end-round(c2)",
+      "moveforward(robot2, square2, square1, west, c1, c2)",
+      "rotate(robot1, square3, east, north, c0, c1)",
+      "begin-execution(c0)",
+      "apply-moveforward(robot2, square2, square1, c0, c1)",
+      "apply-rotate(robot1, square3, east, north, c1, c2)",
+      "end-round(c2)"
+    ]
+  },
+  "problem3.pddl": {
+    "status": "VALID",
+    "actions": 18,
+    "plan": [
+      "moveforward(robot1, square1, square2, east, c1, c2)",
+      "wait(robot2, square4, c0, c1)",
+      "begin-execution(c0)",
+      "apply-moveforward(robot1, square1, square2, c0, c1)",
+      "apply-wait(robot2, square4, c1, c2)",
+      "end-round(c2)",
+      "moveforward(robot1, square2, square3, east, c1, c2)",
+      "moveforward(robot2, square4, square2, south, c0, c1)",
+      "begin-execution(c0)",
+      "apply-moveforward(robot1, square2, square3, c0, c1)",
+      "apply-moveforward(robot2, square4, square2, c1, c2)",
+      "end-round(c2)",
+      "moveforward(robot2, square2, square5, south, c1, c2)",
+      "rotate(robot1, square3, east, north, c0, c1)",
+      "begin-execution(c0)",
+      "apply-moveforward(robot2, square2, square5, c0, c1)",
+      "apply-rotate(robot1, square3, east, north, c1, c2)",
+      "end-round(c2)"
+    ]
+  },
+  "problem4.pddl": {
+    "status": "VALID",
+    "actions": 8,
+    "plan": [
+      "moveforward(robot1, square1, square2, east, c2, c3)",
+      "moveforward(robot2, square3, square6, south, c1, c2)",
+      "moveforward(robot3, square4, square5, east, c0, c1)",
+      "begin-execution(c0)",
+      "apply-moveforward(robot1, square1, square2, c0, c1)",
+      "apply-moveforward(robot3, square4, square5, c1, c2)",
+      "apply-moveforward(robot2, square3, square6, c2, c3)",
+      "end-round(c3)"
+    ]
+  },
+  "test-cycle.pddl": {
+    "status": "VALID",
+    "actions": 8,
+    "plan": [
+      "moveforward(a, p1, p2, d1, c2, c3)",
+      "moveforward(b, p2, p3, d2, c1, c2)",
+      "moveforward(c, p3, p1, d3, c0, c1)",
+      "begin-execution(c0)",
+      "apply-moveforward(a, p1, p2, c0, c1)",
+      "apply-moveforward(b, p2, p3, c1, c2)",
+      "apply-moveforward(c, p3, p1, c2, c3)",
+      "end-round(c3)"
+    ]
+  },
+  "test-following.pddl": {
+    "status": "VALID",
+    "actions": 6,
+    "plan": [
+      "moveforward(a, p1, p2, east, c1, c2)",
+      "moveforward(b, p2, p3, east, c0, c1)",
+      "begin-execution(c0)",
+      "apply-moveforward(a, p1, p2, c0, c1)",
+      "apply-moveforward(b, p2, p3, c1, c2)",
+      "end-round(c2)"
+    ]
+  },
+  "test-rotate-wait.pddl": {
+    "status": "VALID",
+    "actions": 12,
+    "plan": [
+      "rotate(a, p1, north, east, c1, c2)",
+      "rotate(b, p3, north, east, c0, c1)",
+      "begin-execution(c0)",
+      "apply-rotate(a, p1, north, east, c0, c1)",
+      "apply-rotate(b, p3, north, east, c1, c2)",
+      "end-round(c2)",
+      "moveforward(a, p1, p2, east, c1, c2)",
+      "wait(b, p3, c0, c1)",
+      "begin-execution(c0)",
+      "apply-moveforward(a, p1, p2, c0, c1)",
+      "apply-wait(b, p3, c1, c2)",
+      "end-round(c2)"
+    ]
+  },
+  "test-swap-blocked.pddl": {
+    "status": "UNSOLVABLE_PROVEN",
+    "reachable_states": 10,
+    "plan": []
+  },
+  "test-vertex-blocked.pddl": {
+    "status": "UNSOLVABLE_PROVEN",
+    "reachable_states": 34,
+    "plan": []
+  }
+}
